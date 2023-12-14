@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="js/home.js" type="module" defer></script>
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <title>Parcelino</title>
+
+</head>
+<body class="w-full h-full">
+  
+<section class="relative w-full shadow-xl h-[76%]">
+  <div id="map" style="width: 100%; height:76%"></div>
+  <div
+    id="overlay-white-shadow"
+    class="absolute inset-0 z-20 w-full bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-white lg:w-5/12 h-1/4 lg:h-auto"
+  ></div>
+  <div
+    class="absolute z-50 px-5 mx-auto overflow-hidden text-lg font-bold text-center top-5 lg:top-16 2xl:top-28 lg:text-left lg:left-10 lg:mx-0 2xl:left-28 bg-none lg:max-w-lg xl:max-w-2xl"
+  >
+    <div class="mb-5">
+      <span
+        class="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl 2xl:text-6xl text-emerald-600"
+      >
+        <span class="text-gray-900">Uber</span>
+        like maps
+        <br />
+        Free & Open-Source Project
+      </span>
+    </div>
+    <div>
+      <p
+        class="w-full text-lg font-normal text-center text-gray-600 sr-only sm:not-sr-only max-w-1/2 lg:text-left 2xl:text-xl lg:max-w-2xl"
+      >
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero eaque
+        hic id eius, quaerat aspernatur fugit eveniet est distinctio, nobis odio
+        modi voluptas asperiores illum?
+      </p>
+    </div>
+  </div>
+
+  <div class="relative flex justify-center">
+    <div
+      class="absolute z-20 grid grid-rows-3 gap-1 md:flex -top-12 md:-top-7 grid-col-1 xs:gap-2"
+    >
+      <div class="flex items-center">
+
+        <label for="simple-search" class="sr-only">Search</label>
+        <div class="relative flex w-64 h-12 align-middle xs:w-80 md:h-14">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            id="input-origin-home"
+            type="text"
+            placeholder="Enter a origin location"
+            onClick="this.setSelectionRange(0, this.value.length)"
+            type="text"
+            {{! value="66 Portland Place, London, UK" }}
+            class="controls block w-full pl-10 p-2.5 px-8 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+           <div
+            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none clear"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center">
+
+         <label for="simple-search" class="sr-only">Search</label>
+        <div class="relative flex w-64 h-12 align-middle xs:w-80 md:h-14">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            id="input-destination-home"
+            placeholder="Enter a destination location"
+            onClick="this.setSelectionRange(0, this.value.length)"
+            type="text"
+            {{! value="44 Curzon Street by Mansley, Curzon Street, London, UK" }}
+            class="controls block w-full pl-10 p-2.5 px-8 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+           <div
+            id="clear"
+            class="absolute inset-y-0 right-0 z-30 flex items-center pr-3 pointer-events-none hover:cursor-pointer"
+            
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+      {{!-- <button
+        type="submit"
+        class="flex justify-center hover:scale-105 p-2.5 w-64 xs:w-80 md:w-14 h-12 md:h-14 text-sm font-medium text-white rounded-lg border border-sky-700 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-700"
+      >
+        <svg
+          class="w-6 h-6 my-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path></svg>
+        <span class="sr-only">Search</span> }}
+        <span class="px-2 my-auto text-md md:hidden">Search</span>
+      </button>
+    </div>
+  </div>
+</section>
+</body>
+</html>
